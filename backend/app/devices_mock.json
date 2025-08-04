@@ -1,0 +1,14 @@
+[
+  {
+    "id": "UXD25003",
+    "brand": "KEF",
+    "model": "Coda W",
+    "reg_source": "fcc",
+    "first_seen": "2025-07-17",
+    "ai": {
+      "est_release_date": "2025-12-20",
+      "est_price_range": "500-800"
+    },
+    "attributes": { "power": "200W" }
+  }
+]

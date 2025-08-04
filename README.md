@@ -2,16 +2,24 @@
 
 This is for testing purpose only.
 
+## Local dev
+
+```bash
+# backend (FastAPI)
+cd backend && poetry install && poetry run uvicorn app.main:app --reload
+
+# frontend (Next.js)
+cd frontend && npm install && npm run dev
+```
 
 ## Quick start
 
 ```bash
 # frontend
-cd frontend && npm run dev
+cd frontend && npm install && npm run dev
 
 # backend
-poetry install
-uvicorn backend.main:app --reload
+cd backend && poetry install && poetry run uvicorn app.main:app --reload
 
 # crawler (mock)
 scrapy crawl fcc > data.json
