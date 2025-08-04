@@ -2,6 +2,22 @@
 
 This is for testing purpose only.
 
+
+## Quick start
+
+```bash
+# frontend
+cd frontend && npm run dev
+
+# backend
+poetry install
+uvicorn backend.main:app --reload
+
+# crawler (mock)
+scrapy crawl fcc > data.json
+```
+
+
 ## Slack Bot
 
 ### Install
@@ -31,5 +47,3 @@ This is for testing purpose only.
    ```bash
    scrapy crawl fcc -O -:jsonlines
    ```
-
-
