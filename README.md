@@ -18,3 +18,18 @@ This is for testing purpose only.
    python bot/app.py
    ```
 
+
+
+## Crawler
+
+### Install
+1. Install dependencies:
+   ```bash
+   pip install scrapy
+   ```
+2. Run the FCC spider and output JSON lines to stdout:
+   ```bash
+   scrapy crawl fcc -O -:jsonlines
+   ```
+
+
