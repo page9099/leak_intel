@@ -2,6 +2,7 @@
 
 This is for testing purpose only.
 
+
 ## Quick start
 
 ```bash
@@ -15,6 +16,7 @@ uvicorn backend.main:app --reload
 # crawler (mock)
 scrapy crawl fcc > data.json
 ```
+
 
 ## Slack Bot
 
@@ -33,6 +35,7 @@ scrapy crawl fcc > data.json
    ```
 
 
+
 ## Crawler
 
 ### Install
@@ -44,4 +47,3 @@ scrapy crawl fcc > data.json
    ```bash
    scrapy crawl fcc -O -:jsonlines
    ```
-
