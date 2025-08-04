@@ -1,0 +1,75 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2024 leak_intel contributors
+---
+openapi: 3.0.3
+info:
+  title: Leak Intelligence API
+  version: 0.0.1
+servers:
+  - url: /v0
+paths:
+  /devices:
+    get:
+      summary: List devices
+      parameters:
+        - in: query
+          name: source
+          required: false
+          schema:
+            type: string
+            example: fcc,ncc
+          description: Comma-separated RegSource filter
+      responses:
+        '200':
+          description: successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Device'
+  /devices/{id}:
+    get:
+      summary: Get single device
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            example: UXD25003
+      responses:
+        '200':
+          description: successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+components:
+  schemas:
+    Device:
+      type: object
+      required: [id, brand, model, reg_source, first_seen]
+      properties:
+        id:
+          type: string
+        brand:
+          type: string
+        model:
+          type: string
+        reg_source:
+          type: string
+        first_seen:
+          type: string
+          format: date
+        ai:
+          type: object
+          properties:
+            est_release_date:
+              type: string
+              format: date
+            est_price_range:
+              type: string
+        attributes:
+          type: object
+          additionalProperties: true
