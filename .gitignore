@@ -1,0 +1,14 @@
+# Node
+node_modules
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Next.js / Vercel
+.next
+.out
+.vercel
+.DS_Store
+
+# Env
+.env
