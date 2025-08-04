@@ -1,0 +1,15 @@
+display_information:
+  name: Leak Intel Bot
+features:
+  bot_user:
+    display_name: Leak Intel Bot
+oauth_config:
+  scopes:
+    bot:
+      - chat:write
+      - commands
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: true
+  token_rotation_enabled: false
+
