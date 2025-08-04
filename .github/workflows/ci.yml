@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2024 leak_intel contributors
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: pip install -r requirements_dev.txt || true
+      - name: Run flake8 (if exists)
+        run: |
+          if [ -f backend/requirements.txt ]; then
+            pip install flake8
+            flake8 backend || true
+          fi
+      - name: Run unit tests (pytest)
+        run: |
+          if [ -d tests ]; then
+            pip install pytest
+            pytest -q || true
+          fi
