@@ -12,3 +12,13 @@ package-lock.json
 
 # Env
 .env
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+
+# Scrapy dumps
+crawler/*.json
+
+# VS Code project settings (念のため)
+.vscode/
